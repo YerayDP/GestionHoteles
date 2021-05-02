@@ -1,22 +1,22 @@
-package com.example.service;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.entity.Usuario;
-import com.example.repository.UsuarioRepository;
+import com.example.demo.entity.Usuario;
+import com.example.demo.repository.UsuarioRepository;
 @Service
 public class UsuarioService {
 	@Autowired
 	UsuarioRepository Repositorio;
+
 	@Autowired
-	BCryptPasswordEncoder passwordEncoder;
-	
+    BCryptPasswordEncoder passwordEncoder;
 	public Usuario Registrar(Usuario Usu) {
 		
-		
-		
+		Usu.setPassword(passwordEncoder.encode(Usu.getPassword()));
+
 		
 		return Repositorio.save(Usu);
 

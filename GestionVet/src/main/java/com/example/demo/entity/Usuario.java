@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.demo.entity;
 
 import java.util.List;
 
@@ -6,35 +6,39 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity
 
-public class UsuarioModel {
+public class Usuario {
 	
 	
-	
+	@Id
+	@GeneratedValue
+	@Column(length=11)
 	private int id;
-
+	@Column(length=30)
 	private String nombre;
-
+	@Column(length=50)
 	private String apellidos;
-
+	@Column(length=10)
 	private String telefono;
-
+	@Column(length=30)
 	private String username;
-
+	@Column()
 	private String password;
 	
 	private String Role;
 	private Boolean Activado;
+	@OneToMany
+	private List <Mascota> ListaMascota;
 	
-	private List <MascotaModel> ListaMascota;
-	
-	public UsuarioModel() {
+	public Usuario() {
 		super();
 	}
 
-	public UsuarioModel(int id, String nombre, String apellidos, String telefono, String username, String password,
-			String role, Boolean activado, List<MascotaModel> listaMascota) {
+	public Usuario(int id, String nombre, String apellidos, String telefono, String username, String password,
+			String role, Boolean activado, List<Mascota> listaMascota) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -111,11 +115,11 @@ public class UsuarioModel {
 		Activado = activado;
 	}
 
-	public List<MascotaModel> getListaMascota() {
+	public List<Mascota> getListaMascota() {
 		return ListaMascota;
 	}
 
-	public void setListaMascota(List<MascotaModel> listaMascota) {
+	public void setListaMascota(List<Mascota> listaMascota) {
 		ListaMascota = listaMascota;
 	}
 }

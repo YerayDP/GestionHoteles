@@ -1,11 +1,14 @@
-package com.example.entity;
+package com.example.demo.entity;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -16,7 +19,7 @@ public class Mascota {
 		super();
 	}
 	public Mascota(int id, String nombre, String tipo, String raza, Date fechaNacimiento, String foto,
-			String idCliente) {
+			Usuario idCliente) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -62,10 +65,10 @@ public class Mascota {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	public String getIdCliente() {
+	public Usuario getIdCliente() {
 		return idCliente;
 	}
-	public void setIdCliente(String idCliente) {
+	public void setIdCliente(Usuario idCliente) {
 		this.idCliente = idCliente;
 	}
 	@Id
@@ -82,8 +85,10 @@ public class Mascota {
 	private Date fechaNacimiento;
 	@Column(length=100)
 	private String foto;
-	@Column(length=11)
-	private String idCliente;
+	@ManyToOne
+	@JoinColumn(name="idCliente",foreignKey=@ForeignKey(name="idCliente_FK"),nullable=false)
+	private Usuario idCliente;
+	
 	
 	
 	

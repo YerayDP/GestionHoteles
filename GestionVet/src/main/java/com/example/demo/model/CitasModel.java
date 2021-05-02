@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.demo.model;
 
 import java.util.Date;
 
@@ -7,15 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
-
-public class Citas {
+public class CitasModel {
 	
 	
-	public Citas() {
+	public CitasModel() {
 		super();
 	}
-	public Citas(int id, int idMascota, int idVeterinario, Date fecha, String motivo, String informe,
+	public CitasModel(int id, int idMascota, int idVeterinario, Date fecha, String motivo, String informe,
 			Boolean realizada) {
 		super();
 		this.id = id;
@@ -68,21 +66,13 @@ public class Citas {
 	public void setRealizada(Boolean realizada) {
 		this.realizada = realizada;
 	}
-	@Id
-	@GeneratedValue
-	@Column(length=11)
-	private int id;
-	@Column(length=11)
-	private int idMascota;
-	@Column(length=11)
+
+	private int id;	
+	private int idMascota;	
 	private int idVeterinario;
-	@Column(length=11)
-	private Date fecha;
-	@Column(length=100)
-	private String motivo;
-	@Column(length=100)
-	private String informe;
-	@Column(length=11)
+	private Date fecha;	
+	private String motivo;	
+	private String informe;	
 	private Boolean realizada;
 
 	
