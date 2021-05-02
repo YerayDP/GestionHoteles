@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>Gestion Veterinaria DAM</title>
 </head>
 <body>
-	<h1>Hola</h1>
-	<form method="post" th:action="@{/auth/DoLogout}">
-		<button type="submit"> CERRAR SESION </button>
-	</form>
+
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Hola</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>

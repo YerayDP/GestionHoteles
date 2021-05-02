@@ -41,6 +41,8 @@ public class SecConf extends WebSecurityConfigurerAdapter{
 			.logoutUrl("/auth/DoLogout")
 			.logoutSuccessUrl("/auth/login?logout")
 			.permitAll();
+
+     	
     
     }
 }

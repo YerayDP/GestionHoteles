@@ -39,4 +39,5 @@ public class UsuarioCont {
 		UsuServ.Registrar(Usu);
         return "redirect:/auth/login";
     }
+	
 }
